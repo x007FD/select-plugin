@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  padding-top: 100px;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1E1E1E;
+}
+
+.ms-select {
+  position: relative;
+  width: 400px;
+  user-select: none;
+
+  &.is-active:not(.is-empty) {
+    .ms-select__dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .ms-select__header {
+      background: #F4F4F4;
+      border-radius: 8px 8px 0 0;
+
+      &-icon {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &-value {
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: #464956;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+      transition: 0.2s ease;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    max-height: 224px;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease;
+    background: #FFFFFF;
+    overflow-y: auto;
+    border-radius: 0 0 8px 8px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #B2B5C1;
+    background: #FFFFFF;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      background: #f6f7fc;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #3d5af1;
+      opacity: 0;
+      transition: 0.2s ease;
+    }
+
+    &.is-checked {
+      font-weight: 700;
+      color: #3D5AF1;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
