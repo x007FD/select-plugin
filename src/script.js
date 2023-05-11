@@ -56,7 +56,6 @@ export class VSelect {
         this.#selectedId = +id
 
         headerValueElement.innerText = this.currentItem.value
-        inputValueElement.value = this.#selectedId
         itemElements.forEach(item => {
             item.classList.remove(this.CHECKED_CLASS)
             item.disabled = false
@@ -150,7 +149,6 @@ export class VSelect {
     #getSelectElements() {
         return {
             headerValueElement: this.selectElement.querySelector('.v-select__header-value'),
-            inputValueElement: this.selectElement.querySelector('.v-select__input'),
             itemElements: this.selectElement.querySelectorAll('.v-select__item')
         }
     }
