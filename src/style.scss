@@ -1,20 +1,17 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+$FONT: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+$TRANSITION: 0.2s ease;
+$WHITE_COLOR: #ffffff;
+$ITEM_VALUE_COLOR: #b2b5c1;
+$ITEM_HOVER_COLOR: #f6f7fc;
+$ITEM_ACTIVE_COLOR: #3d5af1;
+$HEADER_ACTIVE_COLOR: #f4f4f4;
+$HEADER_BORDER_COLOR: #d1d1d1;
+$HEADER_VALUE_COLOR: #464956;
+$HEADER_HEIGHT: 60px;
 
-body {
-  display: flex;
-  padding-top: 100px;
-  justify-content: center;
-  min-height: 100vh;
-  background: #1E1E1E;
-}
-
-.ms-select {
+.v-select {
   position: relative;
-  width: 400px;
+  font-family: $FONT;
   user-select: none;
 
   &.is-active:not(.is-empty) {
@@ -24,7 +21,7 @@ body {
     }
 
     .ms-select__header {
-      background: #F4F4F4;
+      background: $HEADER_ACTIVE_COLOR;
       border-radius: 8px 8px 0 0;
 
       &-icon {
@@ -39,19 +36,17 @@ body {
     display: flex;
     align-items: center;
     padding: 0 16px;
-    height: 60px;
-    background: #FFFFFF;
-    border: 1px solid #D1D1D1;
+    height: $HEADER_HEIGHT;
+    background: $WHITE_COLOR;
+    border: 1px solid $HEADER_BORDER_COLOR;
     border-radius: 8px;
     cursor: pointer;
 
     &-value {
-      font-family: 'Poppins', sans-serif;
-      font-style: normal;
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
-      color: #464956;
+      color: $HEADER_VALUE_COLOR;
     }
 
     &-icon {
@@ -59,21 +54,21 @@ body {
       top: 50%;
       right: 24px;
       transform: translateY(-50%);
-      transition: 0.2s ease;
+      transition: $TRANSITION;
     }
   }
 
   &__dropdown {
     position: absolute;
-    top: 60px;
+    top: $HEADER_HEIGHT;
     left: 0;
     width: 100%;
     max-height: 224px;
     height: auto;
     opacity: 0;
     visibility: hidden;
-    transition: 0.2s ease;
-    background: #FFFFFF;
+    transition: $TRANSITION;
+    background: $WHITE_COLOR;
     overflow-y: auto;
     border-radius: 0 0 8px 8px;
   }
@@ -85,20 +80,18 @@ body {
     width: 100%;
     padding: 16px;
     position: relative;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: #B2B5C1;
-    background: #FFFFFF;
+    color: $ITEM_VALUE_COLOR;
+    background: $WHITE_COLOR;
     border: none;
     text-align: left;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: $TRANSITION;
 
     &:hover {
-      background: #f6f7fc;
+      background: $ITEM_HOVER_COLOR;
     }
 
     &::before {
@@ -108,14 +101,14 @@ body {
       left: 0;
       width: 4px;
       height: 100%;
-      background: #3d5af1;
+      color: $ITEM_ACTIVE_COLOR;
       opacity: 0;
-      transition: 0.2s ease;
+      transition: $TRANSITION;
     }
 
     &.is-checked {
       font-weight: 700;
-      color: #3D5AF1;
+      color: $ITEM_ACTIVE_COLOR;
 
       &::before {
         opacity: 1;
