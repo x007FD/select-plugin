@@ -15,18 +15,26 @@ $HEADER_HEIGHT: 60px;
   user-select: none;
 
   &.is-active:not(.is-empty) {
-    .ms-select__dropdown {
+    .v-select__dropdown {
       opacity: 1;
       visibility: visible;
     }
 
-    .ms-select__header {
+    .v-select__header {
       background: $HEADER_ACTIVE_COLOR;
       border-radius: 8px 8px 0 0;
 
       &-icon {
         transform: translateY(-50%) rotate(180deg);
       }
+    }
+  }
+
+  &.is-inline {
+    .v-select__dropdown {
+      position: static;
+      opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -101,7 +109,7 @@ $HEADER_HEIGHT: 60px;
       left: 0;
       width: 4px;
       height: 100%;
-      color: $ITEM_ACTIVE_COLOR;
+      background: $ITEM_ACTIVE_COLOR;
       opacity: 0;
       transition: $TRANSITION;
     }
