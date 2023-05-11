@@ -1,7 +1,7 @@
 {
-  "name": "select-plugin",
+  "name": "v-select",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "prettier": "2.8.8",
     "sass": "^1.62.1",
     "vite": "^4.3.2"
   }
