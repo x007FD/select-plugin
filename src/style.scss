@@ -33,8 +33,13 @@ $HEADER_HEIGHT: 60px;
   &.is-inline {
     .v-select__dropdown {
       position: static;
-      opacity: 1;
-      visibility: visible;
+      display: none;
+    }
+
+    &.is-active {
+      .v-select__dropdown {
+        display: block;
+      }
     }
   }
 
