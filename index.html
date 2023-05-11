@@ -3,15 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Select Plugin</title>
+    <title>VSelect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   </head>
+  <style>
+      .select-container {
+          width: 400px;
+      }
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        padding-top: 100px;
+        justify-content: center;
+        min-height: 100vh;
+        background: #1E1E1E;
+      }
+  </style>
   <body>
-    <div id="app">
-      <div class="select-container" id="my-select"></div>
-    </div>
+    <div class="select-container" id="my-select"></div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

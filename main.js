@@ -1,7 +1,7 @@
 import './src/style.scss'
-import { Select } from "./src/select.js";
+import { VSelect } from "./src/script.js";
 
-const select = new Select('#my-select', {
+const select = new VSelect('#my-select', {
     data: [
         { id: 1, value: 'Vue', info: 30 },
         { id: 2, value: 'React' },
